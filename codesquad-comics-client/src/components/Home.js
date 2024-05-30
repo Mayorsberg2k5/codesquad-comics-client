@@ -30,10 +30,28 @@ const Home = () => {
                             COMPLETE COMIC COLLECTION
                             </h1>
                         </div>
+
+                        {booksData.map((book) => 
+                        
+                        <div>
+                                <a href="#"> 
+                                    <img src="./public/images/watchmen.jpg" alt="Watchmen" classNAme="Image-size"/> 
+                                </a>
+                                <div className="comic-details">
+                                    <i> 
+                                        
+                                    </i>
+                                    
+                                    
+                                    <div>
+                                        <a href="#"></a>
+                                    </div>
+                                </div>
+                        </div>)}
                     
-                        <div className="comics">
-                            <div> 
-                              {/* <!--Each comic has it's own div--> */}
+                         <div className="comics">
+                            {/* <div> 
+                               <!--Each comic has it's own div--> 
                                 <a href="#"> 
                                     <img src="./public/images/fun-home.jpg" alt="Fun Home" className="Image-size"/> 
                                 </a>
@@ -228,7 +246,7 @@ const Home = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div> 
+                        </div>   */}
                         {/* <!--The div for the entire comic section excluding the title--> */}
                         <div className="display-more-container"> 
                             <input type="button" className="display-more" value ="DISPLAY MORE" />
@@ -237,6 +255,7 @@ const Home = () => {
                 </div>  
             </div>
         </div>
+    </div>
     )
   }
 
