@@ -1,6 +1,7 @@
 import React from 'react'
 
 import booksData from "../data/books";
+import books from '../data/books';
 
 const Home = () => {
     return (
@@ -32,22 +33,26 @@ const Home = () => {
                         </div>
 
                         {booksData.map((book) => 
-                        
                         <div>
-                                <a href="#"> 
-                                    <img src="./public/images/watchmen.jpg" alt="Watchmen" classNAme="Image-size"/> 
-                                </a>
                                 <div className="comic-details">
+                                <a href="#"> 
+                                    <img src={`./public/images/${book.image}`} alt="Cover" width ="200px"/></a>
+                                    <br/>
                                     <i> 
-                                        
+                                        {book.title}
                                     </i>
-                                    
-                                    
+                                    <br/>
+                                    by {book.author}
+                                     <br/>
+                                     {book.rating} stars
+                                     <br/>
                                     <div>
                                         <a href="#"></a>
                                     </div>
                                 </div>
                         </div>)}
+
+                        
                     
                          <div className="comics">
                             {/* <div> 

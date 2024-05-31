@@ -40,17 +40,17 @@ const Update = () => {
 
                 <div> 
                     <label for="Genre">Genre:</label>
-                    <input type="text" id="Genre" name="Genre" value="Genre data stored in databse" required/>
+                    <input type="text" id="Genre" name="Genre" value="Genre data stored in database" required/>
                 </div> <br/>
 
                 <div> 
                     <label for="Pages">Number of pages:</label>
-                    <input type="text" id="Pages" name="Pages" value="Pages stored in databse" required/>
+                    <input type="text" id="Pages" name="Pages" value="Pages stored in database" required/>
                 </div> <br/>
 
                 <div> 
                     <label for="Rating">Rating:</label>
-                    <input type="text" id="Rating" name="Rating" value="Rating stored in databse" required/>
+                    <input type="text" id="Rating" name="Rating" value="Rating stored in database" required/>
                 </div> <br/>
 
                 <div> 
