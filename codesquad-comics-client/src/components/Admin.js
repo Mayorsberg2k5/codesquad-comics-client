@@ -15,14 +15,6 @@ const Admin = () => {
 
 
 
-<tbody>
-{booksData.map((book) => <tr> 
-    <td>{book.title}</td>
-    <td><button type="button" id="edit">EDIT</button></td>
-    <td><button type="button" id="delete">DELETE</button></td>
-</tr>)}
-</tbody>
-
 <div className="submit">
     <input type="submit" value ="ADD NEW COMIC"/>
 </div>
@@ -37,6 +29,14 @@ const Admin = () => {
                 <th>DELETE </th>
             </tr>
         </thead>
+
+        <tbody>
+            {booksData.map((book) => <tr> 
+                <td>{book.title}</td>
+                <td><button type="button" id="edit">EDIT</button></td>
+                <td><button type="button" id="delete">DELETE</button></td>
+            </tr>)}
+        </tbody>
 
 
         {/* <tbody>
