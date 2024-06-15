@@ -1,10 +1,11 @@
-import Home from "./components/Home"
+import Admin from "./components/Admin"
+import { useState } from "react";
 
 function App() {
   return (
     <div className="App">   
 
-    <Home />
+    <Admin />
       
     </div>
   );

@@ -2,12 +2,6 @@ import React from 'react'
 import booksData from "../data/books";
 
 
-{booksData.map((book) => <tr> 
-    <td>Batman: The Dark Knight Returns</td>
-    <td><button type="button" id="edit">EDIT</button></td>
-    <td><button type="button" id="delete">DELETE</button></td>
-</tr>)}
-
 const Admin = () => {
     return (
       <div>
@@ -18,9 +12,12 @@ const Admin = () => {
         ADMIN PAGE
     </h1>
 </div>
+
+
+
 <tbody>
 {booksData.map((book) => <tr> 
-    <td>Batman: The Dark Knight Returns</td>
+    <td>{book.title}</td>
     <td><button type="button" id="edit">EDIT</button></td>
     <td><button type="button" id="delete">DELETE</button></td>
 </tr>)}
@@ -31,6 +28,7 @@ const Admin = () => {
 </div>
 
 <div>
+    
     <table className="admin-table"> 
         <thead>
             <tr> 
@@ -39,6 +37,8 @@ const Admin = () => {
                 <th>DELETE </th>
             </tr>
         </thead>
+
+
         {/* <tbody>
             <tr> 
                 <td>Batman: The Dark Knight Returns</td>
