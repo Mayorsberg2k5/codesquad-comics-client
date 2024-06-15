@@ -14,17 +14,17 @@ const Create = () => {
             <div clasNAmes="submit"> 
                 <form action="#">
                     <div> 
-                        <label for="Title">Title:</label>
+                        <label htmlFor="Title">Title:</label>
                         <input type="text" id="title" name="title" value="Title" required/><br/>
                     </div>
 
                     <div> 
-                        <label for="Author">Author:</label>
+                        <label htmlFor="Author">Author:</label>
                         <input type="text" id="Author" name="Author" value="Author" required/>
                     </div>
 
                     <div> 
-                        <label for="Publisher">Publisher</label>
+                        <label htmlFor="Publisher">Publisher</label>
                         <select name="Publisher" id="Publisher" form ="Publisher" required>
                             <option value="BOOM! Box">BOOM! Box</option>
                             <option value="Harry N. Abrams">Harry N. Abrams</option>
@@ -40,22 +40,22 @@ const Create = () => {
                     </div>
 
                     <div> 
-                        <label for="Genre">Genre:</label>
+                        <label htmlFor="Genre">Genre:</label>
                         <input type="text" id="Genre" name="Genre" value="Genre" required/>
                     </div>
 
                     <div> 
-                        <label for="Pages">Number of pages:</label>
+                        <label htmlFor="Pages">Number of pages:</label>
                         <input type="text" id="Pages" name="Pages" value="Number of pages" required/>
                     </div>
 
                     <div> 
-                        <label for="Rating">Rating:</label>
+                        <label htmlFor="Rating">Rating:</label>
                         <input type="text" id="Rating" name="Rating" value="Number (0-5)" required/>
                     </div>
 
                     <div> 
-                        <label for="Synopsis">Synopsis:</label>
+                        <label htmlFor="Synopsis">Synopsis:</label>
                         <input type="text" id="Synopsis" name="Synopsis" value="Synopsis" required/>
                     </div>
 

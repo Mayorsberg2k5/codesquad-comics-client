@@ -18,6 +18,13 @@ const Admin = () => {
         ADMIN PAGE
     </h1>
 </div>
+<tbody>
+{booksData.map((book) => <tr> 
+    <td>Batman: The Dark Knight Returns</td>
+    <td><button type="button" id="edit">EDIT</button></td>
+    <td><button type="button" id="delete">DELETE</button></td>
+</tr>)}
+</tbody>
 
 <div className="submit">
     <input type="submit" value ="ADD NEW COMIC"/>

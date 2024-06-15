@@ -1,7 +1,6 @@
 import React from 'react'
 
 import booksData from "../data/books";
-import books from '../data/books';
 
 const Home = () => {
     return (
@@ -36,7 +35,7 @@ const Home = () => {
                         <div>
                                 <div className="comic-details">
                                 <a href="#"> 
-                                    <img src={`./public/images/${book.image}`} alt="Cover" width ="200px"/></a>
+                                    <img src={`./images/${book.image}`} alt="Cover" width ="200px"/></a>
                                     <br/>
                                     <i> 
                                         {book.title}
