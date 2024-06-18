@@ -1,12 +1,13 @@
 import React from 'react'
+import { useState } from "react";
 
-const Header = () => {
+const Header = ({user, setUser}) => {
     return (
       <div>
-        <header>
+        <header user={user} setUser={setUser}>
             <nav>
                 <a href="#"> 
-                    <img src="./public/images/CodeSquad-Comics-logo.png" alt="CodeSquad-Comics-logo"/>
+                    <img src="./images/CodeSquad-Comics-logo.png" alt="CodeSquad-Comics-logo"/>
                 </a>
                 <button class="hamburgerbutton" > 
                         <i class="fa fa-bars"></i>

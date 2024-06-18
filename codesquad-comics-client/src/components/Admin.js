@@ -1,8 +1,15 @@
-import React from 'react'
+import React,  {useEffect} from "react";
 import booksData from "../data/books";
 
+import {useState} from "react";
 
 const Admin = () => {
+    const [books, setBooks] = useState([]);
+
+    useEffect(() => {
+        setBooks(booksData) 
+    }, []);
+
     return (
       <div>
             <div className="adminpage">
@@ -16,7 +23,9 @@ const Admin = () => {
 
 
 <div className="submit">
-    <input type="submit" value ="ADD NEW COMIC"/>
+    <input 
+    type="submit" 
+    value ="ADD NEW COMIC"/>
 </div>
 
 <div>
@@ -31,10 +40,18 @@ const Admin = () => {
         </thead>
 
         <tbody>
-            {booksData.map((book) => <tr> 
+            {books.map((book) => <tr> 
                 <td>{book.title}</td>
-                <td><button type="button" id="edit">EDIT</button></td>
-                <td><button type="button" id="delete">DELETE</button></td>
+                <td>
+                    <button 
+                        type="button" 
+                        id="edit">EDIT
+                    </button></td>
+                <td>
+                    <button 
+                        type="button" 
+                        id="delete">DELETE
+                    </button></td>
             </tr>)}
         </tbody>
 

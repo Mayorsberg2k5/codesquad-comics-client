@@ -1,8 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useState } from 'react';
 
 import booksData from "../data/books";
 
+
+
+
+
+
 const Home = () => {
+    const [books, setBooks] = useState([]);
+
+    useEffect(() => {
+        setBooks(booksData) 
+    }, []);
+
+
+
+    
     return (
       <div>
         <div>
@@ -25,13 +40,13 @@ const Home = () => {
             </div>
 
             <div className="indexpage">
-                        <div > 
+                        <div> 
                             <h1>
                             COMPLETE COMIC COLLECTION
                             </h1>
                         </div>
 
-                        {booksData.map((book) => 
+                        {books.map((book) => 
                         <div>
                                 <div className="comic-details">
                                 <a href="#"> 

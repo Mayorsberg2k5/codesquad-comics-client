@@ -55,7 +55,7 @@ const Footer = () => {
                     <ul>
                         <li>
                             <a href="http://codesquad.org/" target="_blank"> 
-                            <img src="./public/images/CodeSquad-logo-b.png" alt="CodeSquad-logo"/></a>
+                            <img src="./images/CodeSquad-logo-b.png" alt="CodeSquad-logo"/></a>
                         </li>
                     </ul>
                 </div>

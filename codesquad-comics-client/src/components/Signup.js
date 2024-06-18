@@ -1,11 +1,10 @@
 import React from 'react'
-
 import { useState } from "react";
 
 
-const Login = () => {
+const Signup = () => {
 
-    const submitLogin  = (e) => {
+    const submitSignup  = (e) => {
         e.preventDefault();
         console.log(e.target.value);
 
@@ -21,61 +20,48 @@ const Login = () => {
     console.log(body);
 }
 
-
-    // const navigate = useNavigate();
-
-    // const handleSubmit  = (e) => {
-    //     e.preventDefault();
-    //     const body = {
-    //         username: e.target.username.value,
-    //         password: e.target.password.value
-    //     }
-    //     fetch("http://localhost:8080/login/local", {
-    //         method: 'POST',
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify(body),
-    //         })
-    //         .then((response) => {
-    //             if (!response.ok) {
-    //                 throw new Error ("Network response was not ok");
-    //             }
-    //                 return response.json();
-    //             })
-    //                 .then((result) => {
-    //                     console.log("login successful");
-    //                     localStorage.setItem("user", JSON.stringify(result.data));
-    //                     setUser(result.data);
-    //                     navigate("/admin");
-    //                     })
-    //                     .catch((error) => {
-    //                         console.error("Login error:", error);
-    //             });
-    //         };
-
-
-    
     return (
       <div>
             <div className="loginpage">
         <div>     
             <h1> 
-                LOGIN
+                Signup
             </h1>
         </div>
 
         <div> 
-            <form action="#" onSubmit={submitLogin}>
+            <form action="#" onSubmit={submitSignup}>
 
                 <div className="login">
                     <div> 
-                        <label for="email">Email address: </label>
+                        <label for="firstName">First Name: </label>
                         <input 
                         type="text" 
                         id="email" 
                         name="email" 
                         placeholder="Email" required
+                        /><br/>
+                    
+                    </div> <br/>
+
+                    <div> 
+                        <label for="lastName">Last Name: </label>
+                        <input 
+                        type="text" 
+                        id="password" 
+                        name="password" 
+                        placeholder="Last Name" required
+                        />
+                        
+                    </div> <br/>
+
+                    <div> 
+                        <label for="username">Username: </label>
+                        <input 
+                        type="text" 
+                        id="Username" 
+                        name="Username" 
+                        placeholder="Username" required
                         /><br/>
                     
                     </div> <br/>
@@ -90,6 +76,7 @@ const Login = () => {
                         />
                         
                     </div> <br/>
+
                 </div>
                 
                 <div className="submit">
@@ -106,4 +93,4 @@ const Login = () => {
     )
   }
 
-  export default Login;
+  export default Signup;
