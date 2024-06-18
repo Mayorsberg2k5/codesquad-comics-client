@@ -1,18 +1,25 @@
 import React, {useEffect} from 'react'
 import booksData from "../data/books";
-
 import {useState} from "react";
+import { useParams, useNavigate } from "react-router-dom";
 
 const Update = () => {
-
-    const id = books.id;
-
-    const [books, setBooks] = useState([]);
+    const navigate = useNavigate();
+    const { bookId } = useParams();
+    const [book, setBook] = useState([]);
 
     useEffect(() => {
-        setBooks(booksData) 
-    }, []);
-
+        setBook(booksData) 
+        fetch("`http://localhost:8080/api/books/${bookId}`", {
+            method: "GET",
+            headers: {
+              "Random": "random for now",
+            },
+          })
+          .then((response) => response.json())
+          .then((book) => {setBook(book);})
+        .catch((error) => console.log(error));
+        }, []);
 
     const submitUpdate  = (e) => {
         e.preventDefault();
@@ -27,6 +34,17 @@ const Update = () => {
             rating: e.target.rating.value,
             synopsis: e.target.synopsis.value,
     };
+
+    fetch("`http://localhost:8080/api/books/update/${bookId}`", {
+        method: "PUT",
+        headers: {
+          "Random": "random for now",
+        },
+        body: JSON.stringify(body),
+        })
+        .then((response) => { return response.json();})
+        .then(() => {navigate("/admin")})
+        .catch((error) => {console.error(error)});
 
     console.log(body);
 }
@@ -119,6 +137,6 @@ const Update = () => {
     </div>    
 </div>
     )
-  }
+}
 
   export default Update;

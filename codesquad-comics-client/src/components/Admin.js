@@ -8,7 +8,30 @@ const Admin = () => {
 
     useEffect(() => {
         setBooks(booksData) 
-    }, []);
+        fetch("http://localhost:8080/api/boooks", {
+          method: "GET",
+          headers: {
+            "Random": "random for now",
+          },
+        })
+        .then((response) => response.json())
+        .then((books) => {
+            setBooks(books);
+          })
+          .catch((error) => console.log(error));
+      }, []);
+
+      const handleDelete  = (e) => {
+            fetch("http://localhost:8080/api/books/delete${bookid}", {
+                method: 'DELETE',
+                headers: {
+                    "Content-Type": "application/json"
+                }
+                .then((response) => response.json())
+                .then((result) => console.log("entry deleted", result))
+                .catch((error) =>console.error(error))
+                });
+            }
 
     return (
       <div>
@@ -43,12 +66,17 @@ const Admin = () => {
             {books.map((book) => <tr> 
                 <td>{book.title}</td>
                 <td>
+                    <a href="./Update.js"> 
                     <button 
+                        
                         type="button" 
                         id="edit">EDIT
-                    </button></td>
+                    </button>
+                    </a>
+                </td>
+                    
                 <td>
-                    <button 
+                    <button onClick={(handleDelete)}
                         type="button" 
                         id="delete">DELETE
                     </button></td>

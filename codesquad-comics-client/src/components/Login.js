@@ -1,58 +1,51 @@
 import React from 'react'
-
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 
-const Login = () => {
+const Login = (user={user}, setUser={setUser}) => {
+    const navigate = useNavigate();
 
     const submitLogin  = (e) => {
         e.preventDefault();
         console.log(e.target.value);
 
         const body = {
-            title: e.target.title.value,
-            author: e.target.author.value,
-            genre: e.target.genre.value,
-            pages: e.target.pages.value,
-            rating: e.target.rating.value,
-            synopsis: e.target.synopsis.value,
+            email: e.target.email.value,
+            password: e.target.password.value,
     };
 
     console.log(body);
 }
-
-
-    // const navigate = useNavigate();
-
-    // const handleSubmit  = (e) => {
-    //     e.preventDefault();
-    //     const body = {
-    //         username: e.target.username.value,
-    //         password: e.target.password.value
-    //     }
-    //     fetch("http://localhost:8080/login/local", {
-    //         method: 'POST',
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify(body),
-    //         })
-    //         .then((response) => {
-    //             if (!response.ok) {
-    //                 throw new Error ("Network response was not ok");
-    //             }
-    //                 return response.json();
-    //             })
-    //                 .then((result) => {
-    //                     console.log("login successful");
-    //                     localStorage.setItem("user", JSON.stringify(result.data));
-    //                     setUser(result.data);
-    //                     navigate("/admin");
-    //                     })
-    //                     .catch((error) => {
-    //                         console.error("Login error:", error);
-    //             });
-    //         };
+    const handleSubmit  = (e) => {
+        e.preventDefault();
+        const body = {
+            username: e.target.username.value,
+            password: e.target.password.value
+        }
+        fetch("http://localhost:8080/login/local", {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body),
+            })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error ("Network response was not ok");
+                }
+                    return response.json();
+                })
+                    .then((result) => {
+                        console.log("login successful");
+                        localStorage.setItem("user", JSON.stringify(result.data));
+                        setUser(result.data);
+                        navigate("/admin");
+                        })
+                        .catch((error) => {
+                            console.error("Login error:", error);
+                });
+            };
 
 
     

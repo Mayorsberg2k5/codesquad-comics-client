@@ -1,7 +1,11 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 
 
 const Create = () => {
+    const navigate = useNavigate();
+
+
     const submitCreate  = (e) => {
         e.preventDefault();
         console.log(e.target.value);
@@ -15,7 +19,21 @@ const Create = () => {
             synopsis: e.target.synopsis.value,
     };
 
-    console.log(body);
+        fetch("http://localhost:8080/api/books/create", {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body),
+            })
+            .then((response) => response.json())
+            .then(() => {console.log("you have succesfully created an entry", navigate("/admin"));})
+            .catch((error) => {console.log(error);});
+
+
+            console.log(body);
+}
+
 
     return (
       <div>
@@ -111,5 +129,4 @@ const Create = () => {
       </div>
     )
   }
-}
 export default Create;

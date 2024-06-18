@@ -11,13 +11,22 @@ import booksData from "../data/books";
 const Home = () => {
     const [books, setBooks] = useState([]);
 
-    useEffect(() => {
-        setBooks(booksData) 
-    }, []);
+        useEffect(() => {
+            setBooks(booksData) 
+            fetch("http://localhost:8080/api/books", {
+              method: "GET",
+              headers: {
+                "Random": "random for now",
+              },
+            })
+            .then((response) => response.json())
+            .then((books) => {
+                setBooks(books);
+              })
+              .catch((error) => console.log(error));
+          }, []);
 
 
-
-    
     return (
       <div>
         <div>

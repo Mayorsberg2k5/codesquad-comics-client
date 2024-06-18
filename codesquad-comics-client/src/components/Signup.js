@@ -1,8 +1,11 @@
 import React from 'react'
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
-const Signup = () => {
+const Signup = ({user, setUser}) => {
+    const navigate = useNavigate();
+
 
     const submitSignup  = (e) => {
         e.preventDefault();
@@ -18,7 +21,31 @@ const Signup = () => {
     };
 
     console.log(body);
-}
+    fetch("http://localhost:8080/signup", {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(body),
+        })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error ("Network response was not ok");
+            }
+                return response.json();
+            })
+                .then((result) => {
+                    console.log("signup successful");
+                    localStorage.setItem("user", JSON.stringify(result.data));
+                    setUser(result.data);
+                    navigate("/admin");
+                    })
+                    .catch((error) => {
+                        console.error("Singup error:", error);
+            });
+        };
+
+
 
     return (
       <div>
